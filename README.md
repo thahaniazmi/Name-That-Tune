@@ -1,5 +1,8 @@
 # Name That Tune
 
+> **Credits & Acknowledgements:**
+> This repository is a fork / distribution of the original **[Name That Tune](https://github.com/theRealPadster/name-that-tune)** custom app for Spicetify created and maintained by **[@theRealPadster](https://github.com/theRealPadster)**. All original ideas, implementation, and credits rightfully belong to them. Please check out and star the [original repository](https://github.com/theRealPadster/name-that-tune)!
+
 **This project is not complete/bug-free. If you have suggestions or bug fixes, feel free to contribute.**
 
 Name That Tune is [Heardle](https://en.wikipedia.org/wiki/Heardle) made for [Spicetify](https://spicetify.app) — guess the song from progressively longer snippets. Spotify acquired the original and shut it down in 2023; this keeps the game alive inside their own desktop client.
@@ -7,35 +10,72 @@ Name That Tune is [Heardle](https://en.wikipedia.org/wiki/Heardle) made for [Spi
 ![Preview screenshot](docs/preview-2026-09.png)
 
 ## Table of contents
+  - [Credits](#credits)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Translations](#translations)
   - [Planned Features](#planned-features)
 
-## Installation
-Download the [dist branch](https://github.com/theRealPadster/name-that-tune/archive/refs/heads/dist.zip) and rename the folder "name-that-tune". Copy it into the spicetify custom apps folder:
-| **Platform**    | **Path**                               |
-|-----------------|----------------------------------------|
-| **Linux/macOS** | `~/.config/spicetify/CustomApps`       |
-| **Windows**     | `%appdata%\spicetify\CustomApps`       |
+## Credits
+This project is based on the work by **[theRealPadster](https://github.com/theRealPadster)** on [theRealPadster/name-that-tune](https://github.com/theRealPadster/name-that-tune). Special thanks to the creator and contributors for designing and building this awesome Spicetify extension!
 
-After putting the name-that-tune folder into the correct custom apps folder, run the following command to enable it:
-```
+## Installation
+
+### Method 1: Automatic / Quick Install (Recommended)
+
+Run one of the commands below in your terminal. This downloads the latest ready-to-run app directly into your Spicetify `CustomApps` directory, enables it, and applies it to Spotify automatically:
+
+#### **Windows (PowerShell)**
+```powershell
+$path = "$env:APPDATA\spicetify\CustomApps\name-that-tune"
+if (Test-Path $path) { Remove-Item -Recurse -Force $path }
+Invoke-WebRequest -Uri "https://github.com/thahaniazmi/Name-That-Tune/archive/refs/heads/dist.zip" -OutFile "$env:TEMP\name-that-tune.zip"
+Expand-Archive -Path "$env:TEMP\name-that-tune.zip" -DestinationPath "$env:TEMP" -Force
+Move-Item "$env:TEMP\Name-That-Tune-dist" $path
 spicetify config custom_apps name-that-tune
 spicetify apply
 ```
-Note: Using the `config` command to add the custom app will always append the file name to the existing custom apps list. It does not replace the whole key's value.
 
-Or you can manually edit your `config-xpui.ini` file. Add your desired custom apps folder names in the `custom_apps` key, separated them by the | character.
-Example:
-```ini
-[AdditionalOptions]
-...
-custom_apps = spicetify-marketplace|name-that-tune
+#### **Linux / macOS (Bash / Zsh)**
+```bash
+APPS_DIR="${HOME}/.config/spicetify/CustomApps"
+mkdir -p "$APPS_DIR"
+rm -rf "$APPS_DIR/name-that-tune"
+curl -sSL "https://github.com/thahaniazmi/Name-That-Tune/archive/refs/heads/dist.zip" -o /tmp/name-that-tune.zip
+unzip -q /tmp/name-that-tune.zip -d /tmp/
+mv /tmp/Name-That-Tune-dist "$APPS_DIR/name-that-tune"
+spicetify config custom_apps name-that-tune
+spicetify apply
 ```
 
-Then run:
-```
+---
+
+### Method 2: Manual Installation
+
+1. Download the pre-built **[dist branch zip](https://github.com/thahaniazmi/Name-That-Tune/archive/refs/heads/dist.zip)**.
+2. Unzip the file and rename the extracted folder to `name-that-tune`.
+3. Move the `name-that-tune` folder into your Spicetify `CustomApps` folder:
+   | **Platform**    | **Path**                               |
+   |-----------------|----------------------------------------|
+   | **Windows**     | `%appdata%\spicetify\CustomApps`       |
+   | **Linux/macOS** | `~/.config/spicetify/CustomApps`       |
+
+4. Run the following commands in your terminal:
+   ```bash
+   spicetify config custom_apps name-that-tune
+   spicetify apply
+   ```
+
+---
+
+### Method 3: Build From Source (For Developers)
+
+```bash
+git clone https://github.com/thahaniazmi/Name-That-Tune.git
+cd Name-That-Tune
+pnpm install
+pnpm run build
+spicetify config custom_apps name-that-tune
 spicetify apply
 ```
 
