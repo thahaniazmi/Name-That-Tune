@@ -1,11 +1,17 @@
 # Name That Tune
 
+[![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=flat&logo=spotify&logoColor=white)](https://spotify.com)
+[![Spicetify](https://img.shields.io/badge/Spicetify-Custom_App-orange?style=flat)](https://spicetify.app)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+
 > **Credits & Acknowledgements:**
 > This repository is a fork / distribution of the original **[Name That Tune](https://github.com/theRealPadster/name-that-tune)** custom app for Spicetify created and maintained by **[@theRealPadster](https://github.com/theRealPadster)**. All original ideas, implementation, and credits rightfully belong to them. Please check out and star the [original repository](https://github.com/theRealPadster/name-that-tune)!
 
 **This project is not complete/bug-free. If you have suggestions or bug fixes, feel free to contribute.**
 
 Name That Tune is [Heardle](https://en.wikipedia.org/wiki/Heardle) made for [Spicetify](https://spicetify.app) — guess the song from progressively longer snippets. Spotify acquired the original and shut it down in 2023; this keeps the game alive inside their own desktop client.
+
+`#spotify` `#spicetify` `#spicetify-app` `#spicetify-custom-apps` `#spicetify-extensions` `#plugins` `#apps` `#heardle` `#music-game` `#quiz`
 
 ![Preview screenshot](docs/preview-2026-09.png)
 

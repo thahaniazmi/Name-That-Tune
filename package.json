@@ -1,14 +1,28 @@
 {
   "name": "name-that-tune",
   "version": "0.5.0",
-  "homepage": "https://github.com/theRealPadster/name-that-tune",
+  "description": "Heardle-style song guessing game custom app for Spotify via Spicetify",
+  "homepage": "https://github.com/thahaniazmi/Name-That-Tune",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theRealPadster/name-that-tune.git"
+    "url": "https://github.com/thahaniazmi/Name-That-Tune.git"
   },
   "bugs": {
-    "url": "https://github.com/theRealPadster/name-that-tune/issues"
+    "url": "https://github.com/thahaniazmi/Name-That-Tune/issues"
   },
+  "keywords": [
+    "spotify",
+    "spicetify",
+    "spicetify-custom-apps",
+    "spicetify-app",
+    "spicetify-extensions",
+    "plugins",
+    "apps",
+    "heardle",
+    "game",
+    "music-quiz",
+    "name-that-tune"
+  ],
   "type": "module",
   "packageManager": "pnpm@9.6.0",
   "scripts": {
